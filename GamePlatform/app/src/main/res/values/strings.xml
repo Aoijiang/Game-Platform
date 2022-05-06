@@ -4,5 +4,16 @@
     <string name="title_rank">排行榜</string>
     <string name="title_explore">发现</string>
     <string name="title_personal">我的</string>
+    <string name="game_name1">异度神剑2</string>
+    <string name="game_name2">Zelda</string>
+    <string name="game_name3">原神</string>
+    <string name="game_name4">Ori</string>
     <string name="game_1">game_1</string>
+    <string name="gameType1">游戏类型</string>
+    <string name="gameDisc1">游戏描述</string>
+    <string name="scoreGame1">9.6</string>
+    <string name="scoreGame2">9.5</string>
+    <string name="scoreGame3">9.9</string>
+    <string name="scoreGame4">9.1</string>
+
 </resources>
