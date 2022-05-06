@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/activity_main.xml" value="0.1656534954407295" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.4875" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.4875" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/fragment_explore.xml" value="0.5588541666666667" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/fragment_home.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/fragment_personal.xml" value="0.5588541666666667" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/layout/fragment_rank.xml" value="0.5588541666666667" />
+        <entry key="..\:/AndroidAppliacation/GamePlatform/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5588541666666667" />
       </map>
     </option>
   </component>

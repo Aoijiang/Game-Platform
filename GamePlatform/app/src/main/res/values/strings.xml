@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Game Platform</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">首页</string>
+    <string name="title_rank">排行榜</string>
+    <string name="title_explore">发现</string>
+    <string name="title_personal">我的</string>
 </resources>
