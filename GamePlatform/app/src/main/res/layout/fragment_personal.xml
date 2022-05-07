@@ -53,8 +53,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name1"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
@@ -64,18 +65,18 @@
 
                 <Button
                     android:layout_width="70dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:text="@string/open"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:cornerRadius="20dp"
+                    android:background="@drawable/buttons"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.929"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.733"
-                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintVertical_bias="0.733" />
 
                 <View
                     android:layout_width="match_parent"
@@ -127,8 +128,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name2"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
@@ -138,18 +140,18 @@
 
                 <Button
                     android:layout_width="70dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:text="@string/open"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:cornerRadius="20dp"
+                    android:background="@drawable/buttons"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.929"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.733"
-                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintVertical_bias="0.733" />
 
                 <View
                     android:layout_width="match_parent"
@@ -201,8 +203,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name3"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
@@ -212,18 +215,18 @@
 
                 <Button
                     android:layout_width="70dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:text="@string/open"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:cornerRadius="20dp"
+                    android:background="@drawable/buttons"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.929"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.733"
-                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintVertical_bias="0.733" />
 
                 <View
                     android:layout_width="match_parent"
@@ -275,8 +278,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name4"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
@@ -286,18 +290,18 @@
 
                 <Button
                     android:layout_width="70dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:text="@string/open"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:cornerRadius="20dp"
+                    android:background="@drawable/buttons"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.929"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.733"
-                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintVertical_bias="0.733" />
 
                 <View
                     android:layout_width="match_parent"

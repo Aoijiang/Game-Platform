@@ -61,24 +61,33 @@
 
                         <TextView
                             android:id="@+id/gameType1"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/gameType1" />
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/labels"
+                            android:text="@string/gameType1"
+                            android:textColor="@color/lightText"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                         <TextView
                             android:id="@+id/gameName1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/game_name1" />
+                            android:text="@string/game_name1"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/gameDisc1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/gameDisc1" />
+                            android:text="@string/gameDisc1"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
                     </LinearLayout>
 
                     <ImageView
@@ -101,7 +110,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/scoreGame1"
                         android:textAlignment="center"
-                        android:textColor="#00CCC6"
+                        android:textColor="@color/lightText"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -165,24 +174,33 @@
 
                         <TextView
                             android:id="@+id/gameType2"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/gameType1" />
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/labels"
+                            android:text="@string/gameType1"
+                            android:textColor="@color/lightText"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                         <TextView
                             android:id="@+id/gameName2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/game_name2" />
+                            android:text="@string/game_name2"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/gameDisc2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/gameDisc1" />
+                            android:text="@string/gameDisc1"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
                     </LinearLayout>
 
                     <ImageView
@@ -205,7 +223,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/scoreGame2"
                         android:textAlignment="center"
-                        android:textColor="#00CCC6"
+                        android:textColor="@color/lightText"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -268,24 +286,33 @@
 
                         <TextView
                             android:id="@+id/gameType3"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/gameType1" />
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/labels"
+                            android:text="@string/gameType1"
+                            android:textColor="@color/lightText"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                         <TextView
                             android:id="@+id/gameName3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/game_name3" />
+                            android:text="@string/game_name3"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/gameDisc3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/gameDisc1" />
+                            android:text="@string/gameDisc1"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
                     </LinearLayout>
 
                     <ImageView
@@ -308,7 +335,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/scoreGame3"
                         android:textAlignment="center"
-                        android:textColor="#00CCC6"
+                        android:textColor="@color/lightText"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -371,24 +398,33 @@
 
                         <TextView
                             android:id="@+id/gameType4"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/gameType1" />
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/labels"
+                            android:text="@string/gameType1"
+                            android:textColor="@color/lightText"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                         <TextView
                             android:id="@+id/gameName4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/game_name4" />
+                            android:text="@string/game_name4"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/gameDisc4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/gameDisc1" />
+                            android:text="@string/gameDisc1"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
                     </LinearLayout>
 
                     <ImageView
@@ -411,7 +447,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/scoreGame4"
                         android:textAlignment="center"
-                        android:textColor="#00CCC6"
+                        android:textColor="@color/lightText"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
