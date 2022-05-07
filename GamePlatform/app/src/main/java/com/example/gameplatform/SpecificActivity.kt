@@ -14,7 +14,9 @@ class SpecificActivity : AppCompatActivity() {
         binding= ActivitySpecificBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //获取其他页面传来的参数（游戏名字），用于数据库查询
+        val gameName=intent.getStringExtra("gameName")
         val text=binding.textView
-        text.text="游戏主页"
+        text.text=gameName
     }
 }

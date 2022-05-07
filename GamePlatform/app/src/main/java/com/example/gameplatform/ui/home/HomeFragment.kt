@@ -2,14 +2,12 @@ package com.example.gameplatform.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.gameplatform.MainActivity
 import com.example.gameplatform.SpecificActivity
 import com.example.gameplatform.databinding.FragmentHomeBinding
 
@@ -44,8 +42,11 @@ class HomeFragment : Fragment() {
 
         for(i in 0..3)
             gameList[i].setOnClickListener{
+                //传递游戏名字参数并跳转
                 val name=gameList[i].tag
-                startActivity(Intent(activity,SpecificActivity::class.java))
+                val intent:Intent=Intent(activity,SpecificActivity::class.java)
+                intent.putExtra("gameName",name.toString())
+                startActivity(intent)
             }
 
         return root

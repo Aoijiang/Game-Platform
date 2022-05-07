@@ -2,20 +2,14 @@ package com.example.gameplatform.ui.personal
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.gameplatform.SpecificActivity
 import com.example.gameplatform.databinding.FragmentPersonalBinding
-import com.example.gameplatform.ui.explore.ExploreViewModel
 
 class PersonalFragment : Fragment() {
 
@@ -49,8 +43,11 @@ class PersonalFragment : Fragment() {
 
         for(i in 0..3)
             gameList[i].setOnClickListener{
+                //传递游戏名字参数并跳转
                 val name=gameList[i].tag
-                startActivity(Intent(activity, SpecificActivity::class.java))
+                val intent:Intent=Intent(activity,SpecificActivity::class.java)
+                intent.putExtra("gameName",name.toString())
+                startActivity(intent)
             }
 
         return root
