@@ -2,6 +2,7 @@ package com.example.gameplatform.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class HomeFragment : Fragment() {
 
         for(i in 0..3)
             gameList[i].setOnClickListener{
+                val name=gameList[i].tag
                 startActivity(Intent(activity,SpecificActivity::class.java))
             }
 

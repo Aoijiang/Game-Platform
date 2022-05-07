@@ -15,5 +15,6 @@
     <string name="scoreGame2">9.5</string>
     <string name="scoreGame3">9.9</string>
     <string name="scoreGame4">9.1</string>
+    <string name="open">打开</string>
 
 </resources>

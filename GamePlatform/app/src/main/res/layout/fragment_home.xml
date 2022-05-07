@@ -19,14 +19,15 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:tag="@string/game_name1"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="25dp"
             app:cardMaxElevation="25dp"
-            app:cardPreventCornerOverlap="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
+            app:cardPreventCornerOverlap="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,20 +116,22 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_game2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:tag="@string/game_name2"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="25dp"
             app:cardMaxElevation="25dp"
-            app:cardPreventCornerOverlap="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
+            app:cardPreventCornerOverlap="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -216,20 +219,22 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_game3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:tag="@string/game_name3"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="25dp"
             app:cardMaxElevation="25dp"
-            app:cardPreventCornerOverlap="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
+            app:cardPreventCornerOverlap="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -317,20 +322,22 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_game4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:tag="@string/game_name4"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="25dp"
             app:cardMaxElevation="25dp"
-            app:cardPreventCornerOverlap="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
+            app:cardPreventCornerOverlap="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
