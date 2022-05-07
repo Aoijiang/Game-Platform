@@ -39,7 +39,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     tools:ignore="ImageContrastCheck"
-                    tools:src="@tools:sample/avatars"
+                    android:src="@drawable/xblade"
                     android:contentDescription="@string/game_1" />
             </androidx.cardview.widget.CardView>
 
@@ -114,7 +114,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     tools:ignore="ImageContrastCheck"
-                    tools:src="@tools:sample/avatars"
+                    android:src="@drawable/zelda"
                     android:contentDescription="@string/game_1" />
             </androidx.cardview.widget.CardView>
 
@@ -189,7 +189,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     tools:ignore="ImageContrastCheck"
-                    tools:src="@tools:sample/avatars"
+                    android:src="@drawable/genshin"
                     android:contentDescription="@string/game_1" />
             </androidx.cardview.widget.CardView>
 
@@ -264,7 +264,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     tools:ignore="ImageContrastCheck"
-                    tools:src="@tools:sample/avatars"
+                    android:src="@drawable/ori"
                     android:contentDescription="@string/game_1" />
             </androidx.cardview.widget.CardView>
 
