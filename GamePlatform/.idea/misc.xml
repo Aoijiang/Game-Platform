@@ -17,10 +17,25 @@
         <entry key="..\:/github/Game-Platform/GamePlatform/app/src/main/res/layout/activity_specific.xml" value="0.33" />
         <entry key="..\:/github/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_home.xml" value="0.9193109700815957" />
         <entry key="..\:/github/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_personal.xml" value="0.33" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/buttons.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/labels.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/drawable/t.xml" value="0.2265" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/activity_specific.xml" value="0.22826086956521738" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_explore.xml" value="0.22826086956521738" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_personal.xml" value="0.22826086956521738" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_rank.xml" value="0.264" />
+        <entry key="..\:/storage/AndroidStorage/AndroidStudio/Game-Platform/GamePlatform/app/src/main/res/layout/fragment_rank2.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
