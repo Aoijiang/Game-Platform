@@ -17,4 +17,25 @@
     <string name="scoreGame4">9.1</string>
     <string name="open">打开</string>
 
+    <string name="recoDisc">推荐描述</string>
+    <string name="open">打开</string>
+    <string name="downloadnum">下载 50M</string>
+    <string name="concern">关注</string>
+    <string name="detail">详情</string>
+    <string name="evaluation">评价</string>
+    <string name="strategy">攻略</string>
+    <string name="forum">论坛</string>
+    <string name="brief">简介</string>
+    <string name="strategytype">策略</string>
+    <string name="twodimjumptype">横板跳跃</string>
+    <string name="cardtype">卡牌</string>
+    <string name="rogeliketype">rogelike</string>
+    <string name="openworldtype">开放世界</string>
+    <string name="rpgtype">角色扮演</string>
+    <string name="revenue">冒险</string>
+    <string name="userevaluation">\t\t\t这里是一个用户的评价，游戏很好玩，但是要充钱，不充钱怎么都不行所谓的看脸看运气，没钱的不建议你玩，有钱的也不建议你玩，总之就是不建议，要是钱多的不行建议吧钱给我我帮你玩</string>
+    <string name="gameevaluation">游戏评价</string>
+    <string name="briefcontent">\t\t\t这里是简介的具体内容，大概有很多，要写很多字，试试换行显示怎么样，所以多写一点字，该怎么继续水字数能，太难了啊啊啊啊。接着水字数</string>
+
+
 </resources>
