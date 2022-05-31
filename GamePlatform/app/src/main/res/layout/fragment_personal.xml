@@ -50,6 +50,7 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
+                    android:id="@+id/name_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name1"
@@ -125,6 +126,7 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
+                    android:id="@+id/name_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name2"
@@ -200,6 +202,7 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
+                    android:id="@+id/name3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name3"
@@ -275,6 +278,7 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
+                    android:id="@+id/name_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/game_name4"

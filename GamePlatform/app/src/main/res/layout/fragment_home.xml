@@ -35,6 +35,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/cover1"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:contentDescription="@string/game_1"
@@ -148,6 +149,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/cover2"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:contentDescription="@string/game_1"
@@ -260,6 +262,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/cover3"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:contentDescription="@string/game_1"
@@ -372,6 +375,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/cover4"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:contentDescription="@string/game_1"
