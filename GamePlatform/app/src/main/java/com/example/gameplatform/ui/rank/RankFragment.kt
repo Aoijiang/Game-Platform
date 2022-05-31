@@ -1,31 +1,36 @@
 package com.example.gameplatform.ui.rank
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.cardview.widget.CardView
+import androidx.annotation.NonNull
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.gameplatform.R
 import com.example.gameplatform.databinding.FragmentRankBinding
+import com.example.gameplatform.databinding.RankCardBinding
 import com.example.gameplatform.entities.Game
 import com.google.gson.Gson
-import com.google.gson.JsonArray
-import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
 import java.io.IOException
+import java.lang.reflect.Type
+
 
 class RankFragment : Fragment() {
-    private var layoutManager = LinearLayoutManager(activity)
-    private var games: ArrayList<Game> = ArrayList()
 
 
     private var _binding: FragmentRankBinding? = null
+    private final var handler: Handler = Handler(Looper.myLooper()!!)
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -36,42 +41,34 @@ class RankFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentRankBinding.inflate(inflater, container, false)
+        val root: RecyclerView = binding.root
+
+        var layoutManager = LinearLayoutManager(activity)
+//        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        root.layoutManager = layoutManager
+        root.adapter = Adapter(DiffUtilGameCallBack())
 
 
-//        OkHttpClient.Builder builder=new OkHttpClient.Builder();
         val client = OkHttpClient()
-        val request: Request = Request.Builder().url("http://127.0.0.1:5000/games").build()
+        val request: Request =
+            Request.Builder().url("http://192.168.0.107:5000/games").get().build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                Log.e(e.toString(),"Fail")
-
+                Log.e("Fail", e.stackTraceToString())
             }
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                games.clear()
-                var str = response.body.toString()
-                println(str)
-                var arr = JsonParser().parse(str).asJsonArray
-                var gson = Gson()
-                for (js in arr) {
-                    var g = gson.fromJson<Game>(str, Game::class.java)
-                    games.add(g)
+                val gson = Gson()
+                val listType: Type = object : TypeToken<List<Game?>?>() {}.type
+                val t: List<Game> = gson.fromJson(response.body?.string(), listType)
+                Log.d("Games", t.toString())
+                handler.post {
+                    (root.adapter as Adapter).submitList(t)
                 }
-                println(games)
             }
         })
-
-        _binding = FragmentRankBinding.inflate(inflater, container, false)
-        val root: RecyclerView = binding.root
-
-
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        root.layoutManager = layoutManager
-        var adapter: ArrayAdapter<Game> =
-            ArrayAdapter<Game>(this.requireContext(), android.R.layout.simple_list_item_1, games)
-        root.adapter = Adapter(games)
-
 
         return root
     }
@@ -81,23 +78,46 @@ class RankFragment : Fragment() {
         _binding = null
     }
 
-    internal inner class Adapter(games: ArrayList<Game>) : RecyclerView.Adapter<Adapter.VH>() {
-        private var games: ArrayList<Game> = games
+    internal inner class Adapter(@NonNull diffCallback: DiffUtil.ItemCallback<Game>) :
+        ListAdapter<Game, Adapter.VH>(diffCallback) {
 
-        internal inner class VH(cardView: CardView) : RecyclerView.ViewHolder(cardView)
+        internal inner class VH(@NonNull itemView: RankCardBinding) :
+            RecyclerView.ViewHolder(itemView.root) {
+            var rankCardBinding: RankCardBinding = itemView
+
+            public fun bindData(game: Game) {
+                rankCardBinding.game = game
+                Glide.with(requireActivity())
+                    .load(game.icon)
+                    .into(rankCardBinding.imageView)
+            }
+        }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.VH {
-            val view = LayoutInflater.from(activity).inflate(R.layout.rank_card, parent, false)
-            return VH(view as CardView)
+            var binding = DataBindingUtil.inflate<RankCardBinding>(
+                LayoutInflater.from(parent.context),
+                R.layout.rank_card,
+                parent,
+                false
+            )
+            return VH(binding)
         }
 
         override fun onBindViewHolder(holder: Adapter.VH, position: Int) {
-        }
-
-        override fun getItemCount(): Int {
-            return games.size
+            var t = getItem(position)
+            t.index = (position + 1).toString()
+            t.icon = "http://106.15.6.161/getImage/" + t.icon
+            holder.bindData(t)
         }
     }
 
+    internal inner class DiffUtilGameCallBack : DiffUtil.ItemCallback<Game>() {
+        override fun areItemsTheSame(oldItem: Game, newItem: Game): Boolean {
+            return oldItem.name == newItem.name
+        }
 
+        override fun areContentsTheSame(oldItem: Game, newItem: Game): Boolean {
+            return oldItem.name == newItem.name
+        }
+    }
 }
