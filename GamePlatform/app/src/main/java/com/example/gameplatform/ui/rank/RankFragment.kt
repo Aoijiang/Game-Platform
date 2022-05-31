@@ -1,5 +1,6 @@
 package com.example.gameplatform.ui.rank
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.gameplatform.R
+import com.example.gameplatform.SpecificActivity
 import com.example.gameplatform.databinding.FragmentRankBinding
 import com.example.gameplatform.databinding.RankCardBinding
 import com.example.gameplatform.entities.Game
@@ -90,6 +92,13 @@ class RankFragment : Fragment() {
                 Glide.with(requireActivity())
                     .load(game.icon)
                     .into(rankCardBinding.imageView)
+                rankCardBinding.root.setOnClickListener{
+                    val name=game.name
+                    val intent: Intent = Intent(activity, SpecificActivity::class.java)
+                    intent.putExtra("gameName",name)
+                    Log.e("名字", name)
+                    startActivity(intent)
+                }
             }
         }
 
