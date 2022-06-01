@@ -1,0 +1,64 @@
+import json
+import os
+
+from flask import Flask, redirect, url_for, request, Response
+from flask_cors import CORS
+import pymysql
+
+app = Flask(__name__)
+CORS(app, support_credentials=True)
+app.config["db"] = pymysql.connect(host="106.15.6.161", port=3306,
+                                   user="game_platform", password="root", database="game_platform")
+
+
+@app.route('/game', methods=['POST', 'GET'])
+def getGame():
+    game_name = request.form['name']
+    sql = "select * from game where name='%s'" % game_name
+    cursor = app.config["db"].cursor()
+    cursor.execute(sql)
+    app.config["db"].commit()
+    result = cursor.fetchall()
+    game = {
+        "name": result[0][0],
+        "describe": result[0][1],
+        "type": result[0][2],
+        "rating": result[0][3],
+        "icon": result[0][4],
+    }
+    game = json.dumps(game, indent=4, ensure_ascii=False)
+    return game
+
+
+@app.route('/allGame', methods=['GET', 'POST'])
+def getAllGame():
+    sql = "select * from game where available=1"
+    cursor = app.config["db"].cursor()
+    cursor.execute(sql)
+    app.config["db"].commit()
+    result = cursor.fetchall()
+    games = {}
+    for i in range(4):
+        game = {
+            "name": result[i][0],
+            "describe": result[i][1],
+            "type": result[i][2],
+            "rating": result[i][3],
+            "icon": result[i][4],
+        }
+        # game = json.dumps(game, indent=4, ensure_ascii=False)
+        games[str(i)] = game
+    return games
+
+
+@app.route('/getImage/<file_name>', methods=['GET'])
+def get_image(file_name):
+    file_path = os.path.join('./gameImage/' + file_name + '.jpg')
+    with open(file_path, 'rb') as img:
+        img = img.read()
+        res = Response(img, mimetype="image/jpg")
+        return res
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000)
