@@ -18,7 +18,7 @@
     <string name="open">打开</string>
 
     <string name="recoDisc">推荐描述</string>
-<!--    <string name="open">打开</string>-->
+    <string name="download">下载</string>
     <string name="downloadnum">下载 50M</string>
     <string name="concern">关注</string>
     <string name="detail">详情</string>
