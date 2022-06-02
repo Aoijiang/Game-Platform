@@ -117,7 +117,7 @@ def getAGame(name):
 
 @app.route('/games', methods=['GET'])
 def getGames():
-    sql = "select * from game"
+    sql = "select * from game order by rating desc"
     cursor = app.config["db2"].cursor()
     cursor.execute(sql)
 
