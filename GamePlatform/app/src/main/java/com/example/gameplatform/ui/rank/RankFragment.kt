@@ -54,7 +54,7 @@ class RankFragment : Fragment() {
 
         val client = OkHttpClient()
         val request: Request =
-            Request.Builder().url("http://192.168.0.107:5000/games").get().build()
+            Request.Builder().url("http://106.15.6.161/games").get().build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("Fail", e.stackTraceToString())

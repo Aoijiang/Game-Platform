@@ -9,6 +9,9 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["db"] = pymysql.connect(host="106.15.6.161", port=3306,
                                    user="game_platform", password="root", database="game_platform")
+app.config["db2"] = pymysql.connect(host="106.15.6.161", port=3306,
+                                   user="game_platform", password="root", database="game_platform",
+                                   cursorclass=pymysql.cursors.DictCursor)
 
 
 @app.route('/game', methods=['POST', 'GET'])
@@ -110,6 +113,15 @@ def getGame(name):
     lastresult["comment"] = comments
     return lastresult
 
+@app.route('/games', methods=['GET'])
+def getGames():
+    sql = "select * from game"
+    cursor = app.config["db2"].cursor()
+    cursor.execute(sql)
+
+    result = cursor.fetchall()
+    game = json.dumps(result, indent=4, ensure_ascii=False)
+    return game
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000)
