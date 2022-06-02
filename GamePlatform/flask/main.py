@@ -66,7 +66,7 @@ def get_image(file_name):
 
 
 @app.route('/gamedetail/<name>', methods=['POST', 'GET'])
-def getGame(name):
+def getAGame(name):
     game_name = name
     # game_name = request.form['name']
     sql = "select * from game_detail where name='%s'" % game_name
