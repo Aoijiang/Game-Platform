@@ -27,7 +27,8 @@ def getGame():
         "describe": result[0][1],
         "type": result[0][2],
         "rating": result[0][3],
-        "icon": result[0][4],
+        "cover": result[0][4],
+        "icon": result[0][5],
     }
     game = json.dumps(game, indent=4, ensure_ascii=False)
     return game
@@ -47,7 +48,8 @@ def getAllGame():
             "describe": result[i][1],
             "type": result[i][2],
             "rating": result[i][3],
-            "icon": result[i][4],
+            "cover": result[0][4],
+            "icon": result[0][5],
         }
         # game = json.dumps(game, indent=4, ensure_ascii=False)
         games[str(i)] = game
