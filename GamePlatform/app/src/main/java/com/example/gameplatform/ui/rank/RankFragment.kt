@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -25,6 +26,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
 import java.io.IOException
+import java.lang.Exception
 import java.lang.reflect.Type
 
 
@@ -87,17 +89,62 @@ class RankFragment : Fragment() {
             RecyclerView.ViewHolder(itemView.root) {
             var rankCardBinding: RankCardBinding = itemView
 
-            public fun bindData(game: Game) {
+            public fun bindData(game: Game, pos: Int) {
                 rankCardBinding.game = game
                 Glide.with(requireActivity())
                     .load(game.icon)
                     .into(rankCardBinding.imageView)
-                rankCardBinding.root.setOnClickListener{
-                    val name=game.name
+                rankCardBinding.root.setOnClickListener {
+                    val name = game.name
                     val intent: Intent = Intent(activity, SpecificActivity::class.java)
-                    intent.putExtra("gameName",name)
+                    intent.putExtra("gameName", name)
                     Log.e("名字", name)
                     startActivity(intent)
+                }
+                if (pos == 0) {
+                    rankCardBinding.Open.setOnClickListener {
+                        try {
+                            val packageManager = context?.packageManager
+                            val intent =
+                                packageManager?.getLaunchIntentForPackage("com.zlp.Running")!!;
+                            startActivity(intent)
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                } else if (pos == 1) {
+                    rankCardBinding.Open.setOnClickListener {
+                        try {
+                            val packageManager = context?.packageManager
+                            val intent =
+                                packageManager?.getLaunchIntentForPackage("com.lee.desert")!!;
+                            startActivity(intent)
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                } else if (pos == 2) {
+                    rankCardBinding.Open.setOnClickListener {
+                        try {
+                            val packageManager = context?.packageManager
+                            val intent =
+                                packageManager?.getLaunchIntentForPackage("com.DefaultCompany.TowerDefense")!!;
+                            startActivity(intent)
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                } else if (pos == 3) {
+                    rankCardBinding.Open.setOnClickListener {
+                        try {
+                            val packageManager = context?.packageManager
+                            val intent =
+                                packageManager?.getLaunchIntentForPackage("com.1.Running")!!;
+                            startActivity(intent)
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             }
         }
@@ -116,7 +163,7 @@ class RankFragment : Fragment() {
             var t = getItem(position)
             t.index = (position + 1).toString()
             t.icon = "http://106.15.6.161/getImage/" + t.icon
-            holder.bindData(t)
+            holder.bindData(t, position)
         }
     }
 
