@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -50,6 +51,7 @@ class PersonalFragment : Fragment() {
         nameList = ArrayList()
         iconList = ArrayList()
         resultList = ArrayList()
+        val packageManager = context?.packageManager
 
         val game_1 = binding.game1
         val game_2 = binding.game2
@@ -77,6 +79,44 @@ class PersonalFragment : Fragment() {
         iconList.add(icon_2)
         iconList.add(icon_3)
         iconList.add(icon_4)
+
+        val bt1 = binding.bt1
+        val bt2 = binding.bt2
+        val bt3 = binding.bt3
+        val bt4 = binding.bt4
+        bt1.setOnClickListener {
+            try{
+                val intent = packageManager?.getLaunchIntentForPackage("com.zlp.Running")!!;
+                startActivity(intent)
+            }catch (e:Exception) {
+                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+            }
+        }
+        bt2.setOnClickListener {
+            try{
+                val intent = packageManager?.getLaunchIntentForPackage("com.lee.desert")!!;
+                startActivity(intent)
+            }catch (e:Exception) {
+                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+            }
+        }
+        bt3.setOnClickListener {
+            try{
+                val intent = packageManager?.getLaunchIntentForPackage("com.1.desert")!!;
+                startActivity(intent)
+            }catch (e:Exception) {
+                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+            }
+        }
+        bt4.setOnClickListener {
+            try{
+                val intent = packageManager?.getLaunchIntentForPackage("com.1.Running")!!;
+                startActivity(intent)
+            }catch (e:Exception) {
+                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
         return root
     }
