@@ -108,11 +108,11 @@ class SpecificActivity : AppCompatActivity() {
         getRequest(gameName);
         Log.e("这个会输出在哪",gameName)
         //四个按钮，控制状态
-        var button1: Button = binding.detailbutton
-        var button2: Button = binding.evaluatebutton
-        var horizontalview: HorizontalScrollView = binding.horizontalscrollview1
+        val button1: Button = binding.detailbutton
+        val button2: Button = binding.evaluatebutton
+        val horizontalview: HorizontalScrollView = binding.horizontalscrollview1
         var detaillayout: LinearLayout = binding.detaillayout
-        var evaluationlayout: LinearLayout = binding.evaluationlayout
+        val evaluationlayout: LinearLayout = binding.evaluationlayout
 
         Log.e("json",jsonresult.toString())
 //        textList[0].setText(jsonresult[0]["type"].toString())
