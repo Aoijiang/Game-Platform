@@ -142,7 +142,9 @@ class SpecificActivity : AppCompatActivity() {
     }
     fun getRequest(gameName:String) {
 
-        val url = "http://192.168.2.104:5000/game/" + gameName.toString()
+        val url = "http://106.15.6.161/gamedetail/" + gameName.toString()
+        val url_image = "http://106.15.6.161/getImage/"
+//        val url = "http://192.168.2.104:5000/game/" + gameName.toString()
 //        val url2 = "http://192.168.2.104:5000/getComment/" +gameName.toString()
         // 创建request请求对象
         val request = Request.Builder()
@@ -189,21 +191,21 @@ class SpecificActivity : AppCompatActivity() {
                             commentList[3*i+2].setText(comment["content"].toString())
 
                             Glide.with(this@SpecificActivity)
-                                .load("http://192.168.2.104:5000/getImage/"+comment["usericon"].toString())
+                                .load(url_image+comment["usericon"].toString())
                                 .into(imageList[4+i])
                         }
 
                         Glide.with(this@SpecificActivity)
-                            .load("http://192.168.2.104:5000/getImage/"+jsonresult[0]["gamemainimage"].toString())
+                            .load(url_image+jsonresult[0]["gamemainimage"].toString())
                             .into(imageList[0])
                         Glide.with(this@SpecificActivity)
-                            .load("http://192.168.2.104:5000/getImage/"+jsonresult[0]["gamedetailimage1"].toString())
+                            .load(url_image+jsonresult[0]["gamedetailimage1"].toString())
                             .into(imageList[1])
                         Glide.with(this@SpecificActivity)
-                            .load("http://192.168.2.104:5000/getImage/"+jsonresult[0]["gamedetailimage2"].toString())
+                            .load(url_image+jsonresult[0]["gamedetailimage2"].toString())
                             .into(imageList[2])
                         Glide.with(this@SpecificActivity)
-                            .load("http://192.168.2.104:5000/getImage/"+jsonresult[0]["gamedetailimage3"].toString())
+                            .load(url_image+jsonresult[0]["gamedetailimage3"].toString())
                             .into(imageList[3])
                     }catch (e:Exception){
                         Log.e("错误",e.stackTraceToString())
