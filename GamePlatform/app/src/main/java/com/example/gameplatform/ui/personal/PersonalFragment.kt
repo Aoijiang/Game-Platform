@@ -2,11 +2,13 @@ package com.example.gameplatform.ui.personal
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -102,7 +104,7 @@ class PersonalFragment : Fragment() {
         }
         bt3.setOnClickListener {
             try{
-                val intent = packageManager?.getLaunchIntentForPackage("com.1.desert")!!;
+                val intent = packageManager?.getLaunchIntentForPackage("com.DefaultCompany.TowerDefense")!!;
                 startActivity(intent)
             }catch (e:Exception) {
                 Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
@@ -131,6 +133,9 @@ class PersonalFragment : Fragment() {
         _binding = null
     }
 
+    private fun openTartgetApp(packagename:String){
+        val pm:PackageManager;
+    }
     private fun getGame(context: Context) {
         val baseUrl = "http://106.15.6.161/"
         //创建请求对象
