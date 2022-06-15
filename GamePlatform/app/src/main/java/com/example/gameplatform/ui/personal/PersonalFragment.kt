@@ -34,6 +34,7 @@ class PersonalFragment : Fragment() {
     private lateinit var nameList: ArrayList<TextView>
     private lateinit var iconList: ArrayList<ImageView>
     private lateinit var resultList: ArrayList<JSONObject>
+    private lateinit var btList: ArrayList<Button>
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -53,6 +54,7 @@ class PersonalFragment : Fragment() {
         nameList = ArrayList()
         iconList = ArrayList()
         resultList = ArrayList()
+        btList= ArrayList()
         val packageManager = context?.packageManager
 
         val game_1 = binding.game1
@@ -86,39 +88,10 @@ class PersonalFragment : Fragment() {
         val bt2 = binding.bt2
         val bt3 = binding.bt3
         val bt4 = binding.bt4
-        bt1.setOnClickListener {
-            try{
-                val intent = packageManager?.getLaunchIntentForPackage("com.zlp.Running")!!;
-                startActivity(intent)
-            }catch (e:Exception) {
-                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-            }
-        }
-        bt2.setOnClickListener {
-            try{
-                val intent = packageManager?.getLaunchIntentForPackage("com.lee.desert")!!;
-                startActivity(intent)
-            }catch (e:Exception) {
-                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-            }
-        }
-        bt3.setOnClickListener {
-            try{
-                val intent = packageManager?.getLaunchIntentForPackage("com.DefaultCompany.TowerDefense")!!;
-                startActivity(intent)
-            }catch (e:Exception) {
-                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-            }
-        }
-        bt4.setOnClickListener {
-            try{
-                val intent = packageManager?.getLaunchIntentForPackage("com.1.Running")!!;
-                startActivity(intent)
-            }catch (e:Exception) {
-                Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-            }
-        }
-
+        btList.add(bt1)
+        btList.add(bt2)
+        btList.add(bt3)
+        btList.add(bt4)
 
         return root
     }
@@ -175,7 +148,18 @@ class PersonalFragment : Fragment() {
                                     Log.e("名字", name)
                                     startActivity(intent)
                                 }
+                                btList[i].setOnClickListener{
+                                    val packageName=child["packagename"].toString()
+                                    Log.e("名字",packageName)
+                                    try{
+                                        val intent = context.packageManager.getLaunchIntentForPackage(packageName)!!;
+                                        startActivity(intent)
+                                    }catch (e:Exception) {
+                                        Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
                             }
+
                         } catch (e: Exception) {
                             Log.e("错误", e.stackTraceToString())
                         }
