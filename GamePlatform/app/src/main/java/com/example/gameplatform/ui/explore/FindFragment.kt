@@ -40,7 +40,7 @@ class FindFragment : Fragment() {
 
         override fun onBindViewHolder(holder: VH1, position: Int) {}
         override fun getItemCount(): Int {
-            return 3
+            return 5
         }
     }
 
@@ -52,7 +52,7 @@ class FindFragment : Fragment() {
 
         override fun onBindViewHolder(holder: VH1, position: Int) {}
         override fun getItemCount(): Int {
-            return 3
+            return 5
         }
     }
 
