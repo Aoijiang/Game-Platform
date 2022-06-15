@@ -6,7 +6,7 @@
     <data>
         <variable
             name="game"
-            type="com.example.gameplatform.entities.Game" />
+            type="com.example.gameplatform.entities.LGame" />
     </data>
 
     <androidx.cardview.widget.CardView

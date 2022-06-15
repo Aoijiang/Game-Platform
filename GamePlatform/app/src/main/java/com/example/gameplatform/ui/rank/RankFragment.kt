@@ -21,7 +21,7 @@ import com.example.gameplatform.R
 import com.example.gameplatform.SpecificActivity
 import com.example.gameplatform.databinding.FragmentRankBinding
 import com.example.gameplatform.databinding.RankCardBinding
-import com.example.gameplatform.entities.Game
+import com.example.gameplatform.entities.LGame
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
@@ -65,8 +65,8 @@ class RankFragment : Fragment() {
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
                 val gson = Gson()
-                val listType: Type = object : TypeToken<List<Game?>?>() {}.type
-                val t: List<Game> = gson.fromJson(response.body?.string(), listType)
+                val listType: Type = object : TypeToken<List<LGame?>?>() {}.type
+                val t: List<LGame> = gson.fromJson(response.body?.string(), listType)
                 Log.d("Games", t.toString())
                 handler.post {
                     (root.adapter as Adapter).submitList(t)
@@ -82,14 +82,14 @@ class RankFragment : Fragment() {
         _binding = null
     }
 
-    internal inner class Adapter(@NonNull diffCallback: DiffUtil.ItemCallback<Game>) :
-        ListAdapter<Game, Adapter.VH>(diffCallback) {
+    internal inner class Adapter(@NonNull diffCallback: DiffUtil.ItemCallback<LGame>) :
+        ListAdapter<LGame, Adapter.VH>(diffCallback) {
 
         internal inner class VH(@NonNull itemView: RankCardBinding) :
             RecyclerView.ViewHolder(itemView.root) {
             var rankCardBinding: RankCardBinding = itemView
 
-            public fun bindData(game: Game, pos: Int) {
+            public fun bindData(game: LGame, pos: Int) {
                 rankCardBinding.game = game
                 Glide.with(requireActivity())
                     .load(game.icon)
@@ -101,49 +101,14 @@ class RankFragment : Fragment() {
                     Log.e("名字", name)
                     startActivity(intent)
                 }
-                if (pos == 0) {
-                    rankCardBinding.Open.setOnClickListener {
-                        try {
-                            val packageManager = context?.packageManager
-                            val intent =
-                                packageManager?.getLaunchIntentForPackage("com.zlp.Running")!!;
-                            startActivity(intent)
-                        } catch (e: Exception) {
-                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                } else if (pos == 1) {
-                    rankCardBinding.Open.setOnClickListener {
-                        try {
-                            val packageManager = context?.packageManager
-                            val intent =
-                                packageManager?.getLaunchIntentForPackage("com.lee.desert")!!;
-                            startActivity(intent)
-                        } catch (e: Exception) {
-                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                } else if (pos == 2) {
-                    rankCardBinding.Open.setOnClickListener {
-                        try {
-                            val packageManager = context?.packageManager
-                            val intent =
-                                packageManager?.getLaunchIntentForPackage("com.DefaultCompany.TowerDefense")!!;
-                            startActivity(intent)
-                        } catch (e: Exception) {
-                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                } else if (pos == 3) {
-                    rankCardBinding.Open.setOnClickListener {
-                        try {
-                            val packageManager = context?.packageManager
-                            val intent =
-                                packageManager?.getLaunchIntentForPackage("com.1.Running")!!;
-                            startActivity(intent)
-                        } catch (e: Exception) {
-                            Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
-                        }
+                rankCardBinding.Open.setOnClickListener {
+                    try {
+                        val packageManager = context?.packageManager
+                        val intent =
+                            packageManager?.getLaunchIntentForPackage(game.packagename)!!;
+                        startActivity(intent)
+                    } catch (e: Exception) {
+                        Toast.makeText(context, "此应用尚未安装", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -167,12 +132,12 @@ class RankFragment : Fragment() {
         }
     }
 
-    internal inner class DiffUtilGameCallBack : DiffUtil.ItemCallback<Game>() {
-        override fun areItemsTheSame(oldItem: Game, newItem: Game): Boolean {
+    internal inner class DiffUtilGameCallBack : DiffUtil.ItemCallback<LGame>() {
+        override fun areItemsTheSame(oldItem: LGame, newItem: LGame): Boolean {
             return oldItem.name == newItem.name
         }
 
-        override fun areContentsTheSame(oldItem: Game, newItem: Game): Boolean {
+        override fun areContentsTheSame(oldItem: LGame, newItem: LGame): Boolean {
             return oldItem.name == newItem.name
         }
     }
